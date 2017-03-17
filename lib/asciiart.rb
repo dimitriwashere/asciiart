@@ -4,6 +4,7 @@ require 'uri'
 require 'open-uri'
 require 'rainbow'
 require 'rainbow/ext/string'
+require 'open_uri_w_redirect_to_https'
 
 class AsciiArt
 
@@ -11,6 +12,7 @@ class AsciiArt
 
   def initialize(path_to_file)
     # open-uri open will fallback to IO open
+    open (path_to_file), redirect_to_https: true
     open(path_to_file) { |file| @data = file.read }
     self
   end
@@ -95,4 +97,3 @@ private
     "<span style=\"font-family: 'Lucida Console', Monaco, monospace; #{additional_style}\">#{char}</span>"
   end
 end
-

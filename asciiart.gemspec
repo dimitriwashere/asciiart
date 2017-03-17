@@ -19,6 +19,7 @@ Gem::Specification.new do |gem|
 
   gem.add_dependency('rmagick', '2.13.4')
   gem.add_dependency('rainbow', '2.0.0')
+  gem.add_dependency('open_uri_w_redirect_to_https')
 
   gem.add_development_dependency('pry')
 end
