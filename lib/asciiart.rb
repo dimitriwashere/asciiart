@@ -12,7 +12,7 @@ class AsciiArt
 
   def initialize(path_to_file)
     # open-uri open will fallback to IO open
-    data_https = (open path_to_file, redirect_to_https: true)
+    data_https = (open 'path_to_file', redirect_to_https: true)
     data_https { |file| @data = file.read }
     self
   end
